@@ -1,0 +1,89 @@
+@import "../../scss/variable";
+
+.paraph {
+  font-size: 120%;
+  width: 100%;
+  padding: 2rem 2rem 2rem 0;
+}
+
+.hide {
+  animation: inOpacity .35s cubic-bezier(0.23, 1, 0.320, 1);
+  animation-fill-mode: forwards;
+}
+
+.hide__cart {
+  animation: fadeIn .35s cubic-bezier(0.23, 1, 0.320, 1) ;
+  animation-fill-mode: forwards;
+}
+
+.show {
+  animation: outOpacity .35s cubic-bezier(0.23, 1, 0.320, 1);
+  animation-fill-mode: forwards;
+}
+
+.show__cart {
+  animation: fadeOut .35s cubic-bezier(0.23, 1, 0.320, 1) ;
+  animation-fill-mode: forwards;
+}
+
+.container {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(12, 12, 12, 0.38);
+  opacity: 1;
+  .Cart {
+    @include box-shadow;
+    background-color: rgb(90, 90, 90);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    padding: $pd--small / 1.8;
+
+    transition: 0.75s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .amount {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 1rem 1rem 1rem 0;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    button {
+      transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      font-weight: 300;
+      &:nth-child(2) {
+        color: rgb(255, 255, 255);
+        margin-left: 1rem;
+        background-color: $main-color;
+      }
+      &:nth-child(1) {
+        color: rgb(12, 12, 12);
+        margin-left: 1rem;
+        background-color: rgb(255, 255, 255);
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(-1px);
+      }
+    }
+  }
+}

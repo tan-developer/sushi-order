@@ -1,0 +1,65 @@
+@import "../../scss/variable";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  &:not(:last-child) {
+    padding-bottom: $pd--small / 1.5;
+  }
+  &:not(:first-child) {
+    padding-top: $pd--small / 1.5;
+  }
+
+  .info {
+    > :last-child {
+      color: lighten($color-orange, 5%);
+      font-size: 100%;
+    }
+
+    > :nth-child(2) {
+      font-style: italic;
+    }
+  }
+
+  .order {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    > div {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .amount {
+      
+      align-items: center;
+      label {
+        font-weight: 700;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      input {
+        border: none;
+        border: 2px solid rgba(176, 176, 176, 0.4);
+        border-radius: 0.5rem;
+        height: 2.5rem;
+        width: 4rem;
+        background-color: transparent;
+        color : $color-white;
+        padding: .5rem;
+        margin-left: 1rem;
+        font-weight: 700;
+      }
+    }
+
+    .add {
+      button {
+        @include Button;
+        @include box-shadow
+      }
+    }
+  }
+}

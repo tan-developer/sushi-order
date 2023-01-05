@@ -1,0 +1,33 @@
+@import "../../scss/variable";
+
+.container {
+  // textbox area
+  margin-top: 10rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+  .Card {
+    width: 70% !important;
+    padding: $pd--med;
+    border-radius: $fs--small;
+    @include box-shadow;
+
+    font-size: 1.5rem;
+    > :not(:last-child) {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $color-white;
+        opacity: .3;
+      }
+    }
+  }
+}

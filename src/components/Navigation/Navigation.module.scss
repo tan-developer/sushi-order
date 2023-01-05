@@ -1,0 +1,79 @@
+@import "../../scss/variable";
+
+.nav {
+  z-index: 2;
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 5rem;
+  justify-content: space-between;
+
+  background-color: $main-color;
+  color: $color-white;
+
+  padding: $pd--tiny $pd--small;
+
+  div {
+    display: flex;
+  }
+
+  .title {
+    font-size: $fs--small;
+    align-items: center;
+  }
+
+  .cart {
+    width: auto;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: $main-color--dark;
+    padding: ($pd--tiny / 1.75) ($pd--small);
+    border-radius: 2rem;
+    transition: all 0.1s cubic-bezier(0.3, 0.55, 1, 0.54);
+
+    input {
+      @include abs;
+      opacity: 0;
+    }
+
+    * {
+      font-weight: 700;
+    }
+
+    :nth-child(2) {
+      margin: 0 $pd--tiny / 1.75;
+    }
+
+    :nth-child(3) {
+      background-color: $main-color;
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.5rem;
+      
+    }
+
+    &:before {
+      content: "";
+      @include abs;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border-radius: 2rem;
+      background-color: $main-color--dark;
+      transition: all .35s cubic-bezier(.57,.21,.69,1.25) ;
+      opacity: 1;
+      
+    }
+    &:hover::before {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+
+    &:hover {
+      padding: ($pd--tiny / 1.25) ($pd--small * 1.125);
+      transform: translateX($pd--small * 0.125);
+      
+    }
+  }
+}
